@@ -22,37 +22,40 @@ class Verticals extends Component {
   }
 
   handleVerticalSelect(event){
-    //this.setState({vertical: event.target.value});
+    this.props.onSelectVertical(event.target.value);
+    this.updateVertical(event.target.value);
+  }
+
+  updateVertical(vertical_filter){
     for (var i = 0; i < this.props.verticals.length; i++) {
-      if (this.props.verticals[i].tag_id === event.target.value) {
-        this.setState({vertical_name: this.props.verticals[i].name},
-          () => this.handleCheckComplete()
-        );
+      if (this.props.verticals[i].tag_id === vertical_filter) {
+        this.setState({vertical_name: this.props.verticals[i].name});
         break;
       }
     }
-    this.props.onSelectVertical(event.target.value);
   }
 
   handleCategorySelect(event){
-    //this.setState({category: event.target.value});
+    this.props.onSelectCategory(event.target.value);
+    this.updateCategory(event.target.value);
+  }
+
+  updateCategory(category_filter){
     for (var i = 0; i < this.props.categories.length; i++) {
-      if (this.props.categories[i].tag_id === event.target.value) {
-        this.setState({category_name: this.props.categories[i].name},
-          () => this.handleCheckComplete()
-        );
+      if (this.props.categories[i].tag_id === category_filter) {
+        this.setState({category_name: this.props.categories[i].name});
         break;
       }
     }
-    this.props.onSelectCategory(event.target.value);
   }
 
+/*
   handleCheckComplete() {
     if (this.state.vertical_name !== '' && this.state.category_name !== '') {
       this.setState({complete: true});
     }
   }
-
+*/
   onBackClick(){
     this.props.onBack();
   }
@@ -61,7 +64,16 @@ class Verticals extends Component {
     this.props.onNext();
   }
 
+  componentDidMount()
+  {
+
+            this.updateVertical(this.props.vertical_filter);
+            this.updateCategory(this.props.category_filter);
+  }
+
   render() {
+
+
     let verticalItems;
     let categoryItems;
     console.log(this.props.verticals);
@@ -77,9 +89,10 @@ class Verticals extends Component {
       });
     }
 
+
     return (
       <div className="Verticals">
-        <h1><img src="/images/logo-sm.png" alt="Juniper Networks"/></h1>
+        <h1></h1>
         <h2><span className="light-blue">CHOOSE</span> YOUR VERTICALS</h2>
         <h3>Choose Your Desired Verticals</h3>
         <div className="subnav">
@@ -107,7 +120,7 @@ class Verticals extends Component {
 
         <div className="Nav">
           <a href="#" className="light-blue" onClick={this.onBackClick.bind(this)}>&lt; Back</a>
-          <a href="#" className={this.state.complete ? "show" : "hidden"} onClick={this.onNextClick.bind(this)}>Next &gt;</a>
+          <a href="#" className={this.props.docs.length > 0 ? "show" : "hidden"} onClick={this.onNextClick.bind(this)}>Next &gt;</a>
         </div>
       </div>
     );
@@ -117,6 +130,9 @@ class Verticals extends Component {
 
 
 Verticals.propTypes = {
+  docs: PropTypes.array,
+  vertical_filter: PropTypes.string,
+  category_filter: PropTypes.string,
   verticals: PropTypes.array,
   categories: PropTypes.array,
   onSelectVertical: PropTypes.func,

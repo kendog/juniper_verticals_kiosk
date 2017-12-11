@@ -51,7 +51,7 @@ class Documents extends Component {
     }
     return (
       <div className="Documents">
-        <h1><img src="/images/logo-sm.png" alt="Juniper Networks"/></h1>
+        <h1></h1>
         <h2><span className="light-blue">AVAILABLE</span> DOCUMENTS</h2>
         <div className="subnav">
           <button disabled className="btn-tag-group">{ this.props.region_filter.replace(new RegExp('-', 'g'), ' ').toUpperCase() }</button>

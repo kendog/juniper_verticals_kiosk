@@ -289,7 +289,7 @@ class App extends Component {
           this.state.page === 'start'
             ?
             <div className="Start">
-              <h1><img src="/images/logo-lg.png" alt="Juniper Networks"/></h1>
+              <h1></h1>
               <h2 className="light-blue">Executive Briefing Center Verticals Information Kiosk</h2>
               <p><button onClick={this.handleStartClick.bind(this)}>Touch to Start</button></p>
             </div>
@@ -306,7 +306,11 @@ class App extends Component {
         }
         {
           this.state.page === 'verticals'
-            ?<Verticals verticals={this.state.verticals} categories={this.state.categories}
+            ?<Verticals docs={this.state.files_filtered}
+                        vertical_filter={this.state.vertical_filter}
+                        category_filter={this.state.category_filter}
+                        verticals={this.state.verticals}
+                        categories={this.state.categories}
                         onSelectVertical={this.handleApplyVerticalFilter.bind(this)}
                         onSelectCategory={this.handleApplyCategoryFilter.bind(this)}
                         onNext={this.handleNextClick.bind(this)}
@@ -341,7 +345,7 @@ class App extends Component {
           this.state.page === 'thanks'
             ?
             <div className="Thanks">
-              <h1><img src="/images/logo-sm.png" alt="Juniper Networks"/></h1>
+              <h1></h1>
               <h2>Thank You</h2>
               <h3 className="light-blue">{this.state.user_name}</h3>
               <p className="light-gray">The Juniper Digital Concierge has emailed you the requested files.<br/>Please explore and download additional files at your convience.</p>
@@ -353,17 +357,17 @@ class App extends Component {
           this.state.viewStack['bgvideo']
             ?
             <video id="video-background" muted loop autoPlay>
-              <source src="/videos/background_video_loop_hd.mp4" type="video/mp4" />
+              <source src="static/videos/background_video_loop_hd.mp4" type="video/mp4" />
             </video>
             :
-            <img src="/images/bg.png" id="video-background" />
+            <img src="static/images/bg.png" id="video-background" />
         }
 
         {
           this.state.debug
             ?
             <div className="debug">
-            <p>DEBUG: filters[{ this.state.region_filter }, { this.state.vertical_filter }, { this.state.category_filter }] | files: {this.state.files.length}, files_filtered: {this.state.files_filtered.length}, files_selected: {this.state.files_selected.length} | user_name: {this.state.user_name}, user_email: {this.state.user_email}</p>
+            <p>DEBUG:<br/>filters[{ this.state.region_filter }, { this.state.vertical_filter }, { this.state.category_filter }]<br/>files: {this.state.files.length}<br/>files_filtered: {this.state.files_filtered.length}<br/>files_selected: {this.state.files_selected.length}<br/>user_name: {this.state.user_name}<br/>user_email: {this.state.user_email}</p>
             </div>
             : null
         }

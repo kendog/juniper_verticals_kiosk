@@ -86,7 +86,7 @@ class Briefcase extends Component {
 
     return (
       <div className="Briefcase">
-          <h1><img src="/images/logo-sm.png" alt="Juniper Networks"/></h1>
+          <h1></h1>
           <h2><span className="light-blue">YOUR</span> VIRTUAL <span className="light-blue">BRIEFCASE</span></h2>
           {
             this.state.page === 'name'

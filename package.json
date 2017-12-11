@@ -2,6 +2,7 @@
   "name": "juniper_verticals_kiosk",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://www.juniperebc.com/static/demo/",
   "dependencies": {
     "jquery": "^3.2.1",
     "react": "^16.1.1",

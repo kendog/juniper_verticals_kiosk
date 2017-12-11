@@ -1,32 +1,32 @@
 @font-face {
     font-family: 'Antenna-Regular';
-    src: url('/fonts/Antenna-Regular.eot');
-    src: url('/fonts/Antenna-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Antenna-Regular.woff') format('woff'),
-        url('/fonts/Antenna-Regular.ttf') format('truetype'),
-        url('/fonts/Antenna-Regular.svg#Antenna-Regular') format('svg');
+    src: url('static/fonts/Antenna-Regular.eot');
+    src: url('static/fonts/Antenna-Regular.eot?#iefix') format('embedded-opentype'),
+        url('static/fonts/Antenna-Regular.woff') format('woff'),
+        url('static/fonts/Antenna-Regular.ttf') format('truetype'),
+        url('static/fonts/Antenna-Regular.svg#Antenna-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Antenna-Light';
-    src: url('/fonts/Antenna-Light.eot');
-    src: url('/fonts/Antenna-Light.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Antenna-Light.woff') format('woff'),
-        url('/fonts/Antenna-Light.ttf') format('truetype'),
-        url('/fonts/Antenna-Light.svg#Antenna-Light') format('svg');
+    src: url('static/fonts/Antenna-Light.eot');
+    src: url('static/fonts/Antenna-Light.eot?#iefix') format('embedded-opentype'),
+        url('static/fonts/Antenna-Light.woff') format('woff'),
+        url('static/fonts/Antenna-Light.ttf') format('truetype'),
+        url('static/fonts/Antenna-Light.svg#Antenna-Light') format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Antenna-ExtraLight';
-    src: url('/fonts/Antenna-ExtraLight.eot');
-    src: url('/fonts/Antenna-ExtraLight.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Antenna-ExtraLight.woff') format('woff'),
-        url('/fonts/Antenna-ExtraLight.ttf') format('truetype'),
-        url('/fonts/Antenna-ExtraLight.svg#Antenna-ExtraLight') format('svg');
+    src: url('static/fonts/Antenna-ExtraLight.eot');
+    src: url('static/fonts/Antenna-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('static/fonts/Antenna-ExtraLight.woff') format('woff'),
+        url('static/fonts/Antenna-ExtraLight.ttf') format('truetype'),
+        url('static/fonts/Antenna-ExtraLight.svg#Antenna-ExtraLight') format('svg');
     font-weight: 200;
     font-style: normal;
 }
@@ -35,7 +35,7 @@ body {
   margin: 0;
   padding: 0;
   background: #000;
-  /*background-image: url("/images/bg.jpg");*/
+  /*background-image: url("static/images/bg.jpg");*/
   background-attachment: fixed;
   background-size: cover;
 }
@@ -51,7 +51,6 @@ h1, h2, h3, p{
 
 
 h1 {
-  font-size: 140px;
 }
 
 h2 {
@@ -149,8 +148,10 @@ button.active.focus {
 
 .Start h1
 {
-  text-align: center;
-  margin: 220px 0 0 0;
+  margin: 220px auto 0 auto;
+  background: url("static/images/logo-lg.png") no-repeat center;
+  width: 1200px;
+  height: 328px;
 }
 
 .Regions h1, .Verticals h1, .Documents h1, .Briefcase h1, .Thanks h1
@@ -160,6 +161,9 @@ button.active.focus {
   position: absolute;
   left: 100px;
   bottom: 25px;
+  background: url("static/images/logo-sm.png") no-repeat center;
+  width: 173px;
+  height: 47px;
 }
 
 .Start h2
@@ -217,17 +221,17 @@ button.active.focus {
 
 .Regions button.americas
 {
-  background-image: url("/images/region-bg-americas.png");
+  background-image: url("static/images/region-bg-americas.png");
   border: 4px solid white;
 }
 .Regions button.apac
 {
-  background-image: url("/images/region-bg-apac.png");
+  background-image: url("static/images/region-bg-apac.png");
   border: 4px solid white;
 }
 .Regions button.emea
 {
-  background-image: url("/images/region-bg-emea.png");
+  background-image: url("static/images/region-bg-emea.png");
   border: 4px solid white;
 }
 
@@ -310,13 +314,13 @@ button.active.focus {
 
 }
 .Verticals button span.icon-lock {
-    background: url("/images/icon-lock.png") no-repeat;
+    background: url("static/images/icon-lock.png") no-repeat;
     float: right;
     width: 30px;
     height: 30px;
 }
 .Verticals button span.icon-arrow {
-    background: url("/images/icon-arrow-blue-up.png") no-repeat;
+    background: url("static/images/icon-arrow-blue-up.png") no-repeat;
     float: right;
     width: 30px;
     height: 30px;
@@ -350,7 +354,7 @@ button.active.focus {
   border: 3px solid #99ccff;
 }
 .Verticals button.btn-tag-group-selected span.icon-arrow {
-    background: url("/images/icon-arrow-blue-down.png") no-repeat;
+    background: url("static/images/icon-arrow-blue-down.png") no-repeat;
     float: right;
     width: 30px;
     height: 30px;
@@ -490,7 +494,7 @@ button.active.focus {
 
 .Documents div.scroll-up
 {
-  background: url("/images/icon-scroll-up.png") no-repeat;
+  background: url("static/images/icon-scroll-up.png") no-repeat;
   width: 50px;
   height: 50px;
   margin: 10px 0 250px 0;
@@ -498,7 +502,7 @@ button.active.focus {
 
 .Documents div.scroll-down
 {
-  background: url("/images/icon-scroll-down.png") no-repeat;
+  background: url("static/images/icon-scroll-down.png") no-repeat;
   width: 50px;
   height: 50px;
   margin: 10px 0;
@@ -528,7 +532,7 @@ button.active.focus {
 }
 .DocumentItem div.checkbox
 {
-  background: url("/images/checkbox.png") no-repeat;
+  background: url("static/images/checkbox.png") no-repeat;
   width: 75px;
   height: 100px;
   float: left;
@@ -536,14 +540,14 @@ button.active.focus {
 }
 .DocumentItem div.checkbox-on
 {
-  background: url("/images/checkbox-on.png") no-repeat;
+  background: url("static/images/checkbox-on.png") no-repeat;
   width: 75px;
   height: 100px;
   float: left;
 }
 .DocumentItem div.icon
 {
-  background: url("/images/icon-pdf.png") no-repeat;
+  background: url("static/images/icon-pdf.png") no-repeat;
   width: 75px;
   height: 100px;
   float: left;
@@ -676,7 +680,7 @@ button.active.focus {
   width: 125px;
 }
 .Keyboard button span.icon-delete{
-    background: url("/images/icon-lock.png") no-repeat;
+    background: url("static/images/icon-lock.png") no-repeat;
     width: 25px;
     height: 25px;
     vertical-align: middle;
@@ -737,6 +741,9 @@ button.active.focus {
 
 .debug p
 {
+  position: absolute;
+  top: 0;
+  left: 0;
   color: #fff;
   padding: 0;
   margin: 0;

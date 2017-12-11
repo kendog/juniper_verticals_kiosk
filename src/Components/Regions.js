@@ -35,7 +35,7 @@ class Regions extends Component {
 
     return (
       <div className="Regions">
-          <h1><img src="/images/logo-sm.png" alt="Juniper Networks"/></h1>
+          <h1></h1>
           <h2><span className="light-blue">CHOOSE</span> YOUR REGION</h2>
           <h3>For the best, most relevant content experience</h3>
           <p>
